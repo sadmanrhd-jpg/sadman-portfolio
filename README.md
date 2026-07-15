@@ -36,6 +36,18 @@ Preview the production build:
 npm run preview
 ```
 
+
+## Vercel deployment
+
+1. Push the repository contents to GitHub.
+2. Import the GitHub repository into Vercel.
+3. Keep the Framework Preset as Vite.
+4. Keep the Build Command as `npm run build`.
+5. Keep the Output Directory as `dist`.
+6. Deploy.
+
+The included `.npmrc` uses the public npm registry. The lock file contains only public npm registry URLs.
+
 ## GitHub Pages deployment
 
 1. Upload the complete repository contents to a GitHub repository.
