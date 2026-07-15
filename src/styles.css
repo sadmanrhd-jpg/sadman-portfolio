@@ -1,0 +1,325 @@
+@font-face {
+  font-family: "Raleway Local";
+  src: url("/assets/fonts/Raleway-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  --surface: #ffffff;
+  --text: #242424;
+  --muted: #7f7f7f;
+  --line: #3d3d3d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: "Poppins Local", Arial, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+.siteShell {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  padding: clamp(1.5rem, 3.25vw, 3.25rem) clamp(1rem, 3.3vw, 3.5rem)
+    clamp(1.5rem, 3vw, 3rem);
+  overflow: hidden;
+}
+
+.topNavigation {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  gap: clamp(0.9rem, 1.6vw, 2rem);
+}
+
+.pillButton {
+  min-width: clamp(6.5rem, 7.6vw, 8rem);
+  height: clamp(2.7rem, 3.15vw, 3.25rem);
+  padding: 0 1.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--muted);
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Poppins Local", Arial, sans-serif;
+  font-size: clamp(0.82rem, 0.78vw, 1rem);
+  font-weight: 600;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.pillButton:hover,
+.pillButton:focus-visible {
+  background: var(--text);
+}
+
+.pillButton:focus-visible,
+.socialButton:focus-visible,
+.heroLink:focus-visible,
+.galleryTitle:focus-visible,
+.signatureLink:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 5px;
+}
+
+.hero {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  width: min(35rem, 72vw);
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 3.1vw, 3.25rem);
+  transform: translateY(-1.4rem);
+}
+
+.heroLink,
+.galleryTitle {
+  color: var(--text);
+  font-family: "Raleway Local", Arial, sans-serif;
+  font-size: clamp(3.35rem, 4.15vw, 5.4rem);
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.heroDivider,
+.galleryDivider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+}
+
+.siteFooter {
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.signature {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.25rem, 1.55vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.signatureLink {
+  text-decoration: none;
+}
+
+.footerControls {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 1.8vw, 2rem);
+}
+
+.contactButton {
+  min-width: clamp(7rem, 8vw, 8.3rem);
+}
+
+.socialList {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 1.15vw, 1.25rem);
+}
+
+.socialButton {
+  position: relative;
+  display: grid;
+  width: clamp(1.9rem, 2.15vw, 2.35rem);
+  height: clamp(1.9rem, 2.15vw, 2.35rem);
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.socialButton img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.socialHover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.socialButton:hover .socialNormal,
+.socialButton:focus-visible .socialNormal {
+  opacity: 0;
+}
+
+.socialButton:hover .socialHover,
+.socialButton:focus-visible .socialHover {
+  opacity: 1;
+}
+
+.galleryMessage {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  width: min(46rem, 80vw);
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  transform: translateY(-1rem);
+}
+
+.galleryTitle {
+  font-size: clamp(3.1rem, 4vw, 5rem);
+}
+
+.galleryDivider {
+  width: min(30rem, 70vw);
+}
+
+.galleryMessage p {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .siteShell {
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .hero {
+    width: min(29rem, 82vw);
+    transform: none;
+  }
+
+  .siteFooter {
+    align-items: flex-start;
+  }
+
+  .footerControls {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .siteShell {
+    min-height: 100dvh;
+    padding: 1.25rem 1rem;
+  }
+
+  .topNavigation {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pillButton {
+    min-width: 5.8rem;
+    height: 2.45rem;
+    padding: 0 1.1rem;
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    width: 84vw;
+    gap: 1.6rem;
+  }
+
+  .heroLink,
+  .galleryTitle {
+    font-size: clamp(2.5rem, 12vw, 3.4rem);
+  }
+
+  .siteFooter {
+    align-items: center;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .signature {
+    font-size: 1.15rem;
+  }
+
+  .footerControls {
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .contactButton {
+    min-width: 6.2rem;
+  }
+
+  .socialList {
+    gap: 0.7rem;
+  }
+
+  .socialButton {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .galleryMessage {
+    width: 90vw;
+    gap: 1.5rem;
+    transform: none;
+  }
+
+  .galleryMessage p {
+    font-size: 0.98rem;
+  }
+}
