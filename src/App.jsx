@@ -32,8 +32,8 @@ function App() {
   if (route === "/about") {
     return (
       <GalleryPlaceholder>
-        Stay tune to know more about the philosophy behind my work, and everything
-        else. Right now this page is being built gracefully.
+        Stay tuned to know more about my work, the philosophy behind the, and everything
+        else.
       </GalleryPlaceholder>
     );
   }
