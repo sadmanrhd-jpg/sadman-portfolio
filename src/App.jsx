@@ -32,7 +32,7 @@ function App() {
   if (route === "/about") {
     return (
       <GalleryPlaceholder>
-        Stay tuned to know more about my work, the philosophy behind the, and everything
+        Stay tuned to know more about my work, the philosophy behind them, and everything
         else.
       </GalleryPlaceholder>
     );
