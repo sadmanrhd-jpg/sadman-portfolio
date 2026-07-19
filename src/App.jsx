@@ -29,6 +29,14 @@ function App() {
     return <GalleryPlaceholder title="photographer" />;
   }
 
+  if (route === "/about") {
+    return <GalleryPlaceholder title="Who am I?" />;
+  }
+
+  if (route === "/blog") {
+    return <GalleryPlaceholder title="blog" />;
+  }
+
   return <NotFoundPage />;
 }
 

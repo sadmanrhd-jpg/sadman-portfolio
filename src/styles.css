@@ -77,8 +77,11 @@ button {
 }
 
 .pillButton {
+  display: inline-flex;
   min-width: clamp(6.5rem, 7.6vw, 8rem);
   height: clamp(2.7rem, 3.15vw, 3.25rem);
+  align-items: center;
+  justify-content: center;
   padding: 0 1.75rem;
   border: 0;
   border-radius: 999px;
@@ -89,7 +92,23 @@ button {
   font-size: clamp(0.82rem, 0.78vw, 1rem);
   font-weight: 600;
   line-height: 1;
+  text-decoration: none;
   text-transform: lowercase;
+}
+
+.textNavigationLink {
+  color: #7f7f7f;
+  font-family: "Poppins Local", Arial, sans-serif;
+  font-size: clamp(0.82rem, 0.78vw, 1rem);
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.textNavigationLink:hover,
+.textNavigationLink:focus-visible {
+  color: #242424;
 }
 
 .pillButton:hover,
@@ -98,10 +117,10 @@ button {
 }
 
 .pillButton:focus-visible,
+.textNavigationLink:focus-visible,
 .socialButton:focus-visible,
 .heroLink:focus-visible,
-.galleryTitle:focus-visible,
-.signatureLink:focus-visible {
+.galleryTitle:focus-visible {
   outline: 2px solid var(--text);
   outline-offset: 5px;
 }
@@ -139,20 +158,8 @@ button {
   z-index: 2;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 2rem;
-}
-
-.signature {
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(1.25rem, 1.55vw, 1.75rem);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.signatureLink {
-  text-decoration: none;
 }
 
 .footerControls {
@@ -264,7 +271,7 @@ button {
 
   .topNavigation {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .pillButton {
@@ -288,10 +295,6 @@ button {
     align-items: center;
     flex-direction: column;
     gap: 1.4rem;
-  }
-
-  .signature {
-    font-size: 1.15rem;
   }
 
   .footerControls {
