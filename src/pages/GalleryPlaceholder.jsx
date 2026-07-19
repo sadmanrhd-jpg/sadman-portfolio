@@ -1,4 +1,4 @@
-function GalleryPlaceholder() {
+function GalleryPlaceholder({ children }) {
   return (
     <main
       style={{
@@ -28,11 +28,11 @@ function GalleryPlaceholder() {
           borderRight: "18px solid #7F7F7F",
           transition: "border-color 0.2s ease",
         }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.borderRightColor = "#242424";
+        onMouseEnter={(event) => {
+          event.currentTarget.style.borderRightColor = "#242424";
         }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.borderRightColor = "#7F7F7F";
+        onMouseLeave={(event) => {
+          event.currentTarget.style.borderRightColor = "#7F7F7F";
         }}
       />
       <p
@@ -44,7 +44,7 @@ function GalleryPlaceholder() {
           fontWeight: 500,
         }}
       >
-        Building this page gracefully. Please come back after a few days
+        {children || "Building this page gracefully. Please come back after a few days"}
       </p>
     </main>
   );
