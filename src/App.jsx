@@ -22,19 +22,24 @@ function App() {
   }
 
   if (route === "/designer") {
-    return <GalleryPlaceholder title="designer" />;
+    return <GalleryPlaceholder />;
   }
 
   if (route === "/photographer") {
-    return <GalleryPlaceholder title="photographer" />;
+    return <GalleryPlaceholder />;
   }
 
   if (route === "/about") {
-    return <GalleryPlaceholder title="Who am I?" />;
+    return (
+      <GalleryPlaceholder>
+        Stay tuned to know more about my work, the philosophy behind them, and everything
+        else.
+      </GalleryPlaceholder>
+    );
   }
 
   if (route === "/blog") {
-    return <GalleryPlaceholder title="blog" />;
+    return <GalleryPlaceholder />;
   }
 
   return <NotFoundPage />;
