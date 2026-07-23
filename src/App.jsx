@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
+import DesignerPage from "./pages/DesignerPage";
 import GalleryPlaceholder from "./pages/GalleryPlaceholder";
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -22,10 +23,14 @@ function App() {
   }
 
   if (route === "/designer") {
-    return <GalleryPlaceholder />;
+    return <DesignerPage />;
   }
 
   if (route === "/photographer") {
+    return <GalleryPlaceholder />;
+  }
+
+  if (route === "/project/plis") {
     return <GalleryPlaceholder />;
   }
 
