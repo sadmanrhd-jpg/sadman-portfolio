@@ -332,3 +332,248 @@ button {
     font-size: 0.98rem;
   }
 }
+
+/* Designer portfolio page */
+.designerPageShell {
+  background: #ffffff;
+}
+
+.designerGallery {
+  position: relative;
+  align-self: stretch;
+  display: grid;
+  min-height: clamp(31rem, 67vh, 47rem);
+  place-items: center;
+  isolation: isolate;
+}
+
+.designerGallery::before {
+  position: absolute;
+  z-index: -2;
+  inset: 5% -8% 2% -8%;
+  background:
+    linear-gradient(
+      31deg,
+      transparent 49.86%,
+      rgba(36, 36, 36, 0.09) 49.94%,
+      rgba(36, 36, 36, 0.09) 50.02%,
+      transparent 50.1%
+    );
+  content: "";
+  pointer-events: none;
+}
+
+.designerGallery::after {
+  position: absolute;
+  z-index: -2;
+  bottom: -8%;
+  left: 16%;
+  width: min(53vw, 62rem);
+  height: min(20vw, 18rem);
+  border: 1px solid rgba(36, 36, 36, 0.08);
+  content: "";
+  pointer-events: none;
+}
+
+.galleryGeometry {
+  position: absolute;
+  z-index: -1;
+  top: 2%;
+  right: 2.5%;
+  width: clamp(10rem, 17vw, 20rem);
+  height: clamp(7rem, 12vw, 14rem);
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+.geometrySquare,
+.geometryTriangle,
+.geometryCircle {
+  position: absolute;
+  display: block;
+  background: #f4f4f4;
+}
+
+.geometrySquare {
+  top: 0;
+  left: 30%;
+  width: 28%;
+  aspect-ratio: 1;
+}
+
+.geometryTriangle {
+  bottom: 0;
+  left: 4%;
+  width: 0;
+  height: 0;
+  border-top: clamp(2.7rem, 4.5vw, 5.3rem) solid transparent;
+  border-bottom: clamp(2.7rem, 4.5vw, 5.3rem) solid transparent;
+  border-left: clamp(4rem, 6vw, 7rem) solid #f4f4f4;
+  background: transparent;
+}
+
+.geometryCircle {
+  right: 0;
+  bottom: 4%;
+  width: 29%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.projectFeature {
+  display: grid;
+  width: min(78rem, 88vw);
+  grid-template-columns: minmax(20rem, 1fr) minmax(24rem, 1.12fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 7rem);
+}
+
+.projectCoverLink,
+.projectTitleLink,
+.projectKnowMore {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.projectCoverLink {
+  display: block;
+  border-radius: 0.25rem;
+}
+
+.projectCover {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.28s ease;
+}
+
+.projectCoverLink:hover .projectCover,
+.projectCoverLink:focus-visible .projectCover {
+  transform: translateY(-0.35rem);
+}
+
+.projectInformation {
+  max-width: 45rem;
+}
+
+.projectTitleLink {
+  display: inline-block;
+}
+
+.projectTitleLink h1 {
+  margin: 0;
+  font-family: "Poppins Local", Arial, sans-serif;
+  font-size: clamp(2rem, 2.55vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.projectInformation p {
+  max-width: 43rem;
+  margin: clamp(1.2rem, 1.7vw, 1.8rem) 0 clamp(1.4rem, 2vw, 2rem);
+  color: #3f3f3f;
+  font-size: clamp(1rem, 1.1vw, 1.32rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.projectKnowMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-bottom: 1px solid currentColor;
+  font-size: clamp(1rem, 1.08vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.projectKnowMore span {
+  font-size: 1.4em;
+  line-height: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.projectKnowMore:hover span,
+.projectKnowMore:focus-visible span {
+  transform: translateX(0.2rem);
+}
+
+.projectCoverLink:focus-visible,
+.projectTitleLink:focus-visible,
+.projectKnowMore:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 6px;
+}
+
+@media (max-width: 1000px) {
+  .designerGallery {
+    min-height: auto;
+    padding: clamp(4rem, 9vw, 7rem) 0;
+  }
+
+  .projectFeature {
+    width: min(47rem, 86vw);
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .projectCoverLink {
+    width: min(39rem, 100%);
+    justify-self: center;
+  }
+
+  .projectInformation {
+    max-width: 40rem;
+  }
+
+  .designerGallery::after {
+    bottom: 2%;
+    left: 10%;
+    width: 72vw;
+    height: 22vw;
+  }
+}
+
+@media (max-width: 620px) {
+  .designerGallery {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .designerGallery::before {
+    opacity: 0.7;
+  }
+
+  .designerGallery::after {
+    bottom: 2%;
+    left: 4%;
+    width: 84vw;
+    height: 34vw;
+  }
+
+  .galleryGeometry {
+    top: 1rem;
+    right: -1rem;
+    opacity: 0.38;
+  }
+
+  .projectFeature {
+    width: 90vw;
+    gap: 2rem;
+  }
+
+  .projectTitleLink h1 {
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+    letter-spacing: -0.025em;
+  }
+
+  .projectInformation p {
+    margin: 1rem 0 1.35rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .projectKnowMore {
+    font-size: 0.98rem;
+  }
+}
