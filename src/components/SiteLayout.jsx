@@ -1,9 +1,17 @@
 import PillButton from "./PillButton";
 import SocialIcons from "./SocialIcons";
 
-function SiteLayout({ children, isInnerPage = false }) {
+function SiteLayout({ children, isInnerPage = false, className = "" }) {
+  const shellClasses = [
+    "siteShell",
+    isInnerPage ? "innerPage" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className={`siteShell${isInnerPage ? " innerPage" : ""}`}>
+    <div className={shellClasses}>
       <header className="topNavigation" aria-label="Primary navigation">
         <a className="textNavigationLink" href="#/about">
           Who am I?
