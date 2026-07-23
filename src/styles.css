@@ -349,6 +349,7 @@ button {
   width: 100%;
   height: 100%;
   overflow: visible;
+  transform: translateX(-18%);
 }
 
 .backButton path {
@@ -357,6 +358,18 @@ button {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3.25;
+}
+
+.innerPage {
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.innerBackNavigation {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  margin-top: clamp(0.85rem, 1.5vw, 1.4rem);
 }
 
 .backButton:hover,
@@ -379,9 +392,9 @@ button {
   align-self: stretch;
   display: grid;
   min-height: clamp(28rem, 62vh, 40rem);
-  align-items: center;
-  justify-items: start;
-  padding: clamp(2.5rem, 5vh, 4rem) 0;
+  align-items: start;
+  justify-items: center;
+  padding: clamp(1.625rem, 3.25vh, 2.6rem) 0 clamp(2.5rem, 5vh, 4rem);
 }
 
 .projectFeature {
@@ -390,6 +403,7 @@ button {
   grid-template-columns: minmax(19rem, 28rem) minmax(22rem, 1fr);
   align-items: center;
   gap: clamp(3rem, 5vw, 5.75rem);
+  margin-inline: auto;
 }
 
 .projectCoverLink,
@@ -419,7 +433,12 @@ button {
 }
 
 .projectInformation {
+  display: flex;
   max-width: 35rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: center;
 }
 
 .projectTitleLink {
@@ -437,7 +456,7 @@ button {
 
 .projectInformation p {
   max-width: 34rem;
-  margin: clamp(0.95rem, 1.3vw, 1.3rem) 0 clamp(1.1rem, 1.5vw, 1.5rem);
+  margin: clamp(0.52rem, 0.72vw, 0.72rem) 0 clamp(0.88rem, 1.2vw, 1.2rem);
   color: #3f3f3f;
   font-size: clamp(0.9rem, 0.88vw, 1.04rem);
   font-weight: 400;
@@ -449,7 +468,7 @@ button {
   align-items: center;
   gap: 0.2rem;
   border-bottom: 1px solid currentColor;
-  font-size: clamp(0.9rem, 0.86vw, 1rem);
+  font-size: clamp(0.78rem, 0.72vw, 0.88rem);
   font-weight: 500;
   line-height: 1.4;
 }
@@ -475,7 +494,7 @@ button {
 @media (max-width: 1000px) {
   .designerGallery {
     min-height: auto;
-    padding: clamp(3rem, 7vw, 5rem) 0;
+    padding: clamp(1.95rem, 4.55vw, 3.25rem) 0 clamp(3rem, 7vw, 5rem);
   }
 
   .projectFeature {
@@ -512,8 +531,12 @@ button {
     stroke-width: 3.1;
   }
 
+  .innerBackNavigation {
+    margin-top: 0.75rem;
+  }
+
   .designerGallery {
-    padding: 2.75rem 0 3.5rem;
+    padding: 1.8rem 0 3.5rem;
   }
 
   .projectFeature {
@@ -532,13 +555,13 @@ button {
   }
 
   .projectInformation p {
-    margin: 0.85rem 0 1.1rem;
+    margin: 0.47rem 0 0.88rem;
     font-size: 0.92rem;
     line-height: 1.65;
   }
 
   .projectKnowMore {
-    font-size: 0.92rem;
+    font-size: 0.82rem;
   }
 }
 
