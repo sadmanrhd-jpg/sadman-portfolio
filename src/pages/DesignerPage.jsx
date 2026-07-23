@@ -6,12 +6,6 @@ function DesignerPage() {
   return (
     <SiteLayout isInnerPage className="designerPageShell">
       <main className="designerGallery" aria-label="Design portfolio projects">
-        <div className="galleryGeometry" aria-hidden="true">
-          <span className="geometrySquare" />
-          <span className="geometryTriangle" />
-          <span className="geometryCircle" />
-        </div>
-
         <article className="projectFeature">
           <a
             className="projectCoverLink"
