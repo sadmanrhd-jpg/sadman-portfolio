@@ -340,8 +340,13 @@ button {
   height: clamp(2.15rem, 2.7vw, 2.75rem);
   flex: 0 0 auto;
   place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: var(--text);
+  font: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .backButton svg {
