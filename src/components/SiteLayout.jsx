@@ -23,11 +23,16 @@ function SiteLayout({ children, isInnerPage = false, className = "" }) {
 
       {isInnerPage && (
         <nav className="innerBackNavigation" aria-label="Back navigation">
-          <a className="backButton" href="#/" aria-label="Go back">
+          <button
+            className="backButton"
+            type="button"
+            aria-label="Go back to the previous page"
+            onClick={() => window.history.back()}
+          >
             <svg viewBox="0 0 42 42" aria-hidden="true">
               <path d="M31 5 8 21l23 16V5Z" />
             </svg>
-          </a>
+          </button>
         </nav>
       )}
 
