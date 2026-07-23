@@ -333,99 +333,62 @@ button {
   }
 }
 
+/* Inner page back control */
+.backButton {
+  display: grid;
+  width: clamp(2.15rem, 2.7vw, 2.75rem);
+  height: clamp(2.15rem, 2.7vw, 2.75rem);
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.backButton svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.backButton path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.25;
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  color: #000000;
+}
+
+.backButton:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 5px;
+}
+
 /* Designer portfolio page */
-.designerPageShell {
+.designerPageShell,
+.designerGallery {
   background: #ffffff;
 }
 
 .designerGallery {
-  position: relative;
   align-self: stretch;
   display: grid;
-  min-height: clamp(31rem, 67vh, 47rem);
+  min-height: clamp(28rem, 62vh, 40rem);
   place-items: center;
-  isolation: isolate;
-}
-
-.designerGallery::before {
-  position: absolute;
-  z-index: -2;
-  inset: 5% -8% 2% -8%;
-  background:
-    linear-gradient(
-      31deg,
-      transparent 49.86%,
-      rgba(36, 36, 36, 0.09) 49.94%,
-      rgba(36, 36, 36, 0.09) 50.02%,
-      transparent 50.1%
-    );
-  content: "";
-  pointer-events: none;
-}
-
-.designerGallery::after {
-  position: absolute;
-  z-index: -2;
-  bottom: -8%;
-  left: 16%;
-  width: min(53vw, 62rem);
-  height: min(20vw, 18rem);
-  border: 1px solid rgba(36, 36, 36, 0.08);
-  content: "";
-  pointer-events: none;
-}
-
-.galleryGeometry {
-  position: absolute;
-  z-index: -1;
-  top: 2%;
-  right: 2.5%;
-  width: clamp(10rem, 17vw, 20rem);
-  height: clamp(7rem, 12vw, 14rem);
-  opacity: 0.52;
-  pointer-events: none;
-}
-
-.geometrySquare,
-.geometryTriangle,
-.geometryCircle {
-  position: absolute;
-  display: block;
-  background: #f4f4f4;
-}
-
-.geometrySquare {
-  top: 0;
-  left: 30%;
-  width: 28%;
-  aspect-ratio: 1;
-}
-
-.geometryTriangle {
-  bottom: 0;
-  left: 4%;
-  width: 0;
-  height: 0;
-  border-top: clamp(2.7rem, 4.5vw, 5.3rem) solid transparent;
-  border-bottom: clamp(2.7rem, 4.5vw, 5.3rem) solid transparent;
-  border-left: clamp(4rem, 6vw, 7rem) solid #f4f4f4;
-  background: transparent;
-}
-
-.geometryCircle {
-  right: 0;
-  bottom: 4%;
-  width: 29%;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  padding: clamp(2.5rem, 5vh, 4rem) 0;
 }
 
 .projectFeature {
   display: grid;
-  width: min(78rem, 88vw);
-  grid-template-columns: minmax(20rem, 1fr) minmax(24rem, 1.12fr);
+  width: min(65rem, 78vw);
+  grid-template-columns: minmax(19rem, 28rem) minmax(22rem, 1fr);
   align-items: center;
-  gap: clamp(3rem, 6vw, 7rem);
+  gap: clamp(3rem, 5vw, 5.75rem);
 }
 
 .projectCoverLink,
@@ -437,7 +400,9 @@ button {
 
 .projectCoverLink {
   display: block;
-  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 0.2rem;
 }
 
 .projectCover {
@@ -449,11 +414,11 @@ button {
 
 .projectCoverLink:hover .projectCover,
 .projectCoverLink:focus-visible .projectCover {
-  transform: translateY(-0.35rem);
+  transform: translateY(-0.25rem);
 }
 
 .projectInformation {
-  max-width: 45rem;
+  max-width: 35rem;
 }
 
 .projectTitleLink {
@@ -463,40 +428,40 @@ button {
 .projectTitleLink h1 {
   margin: 0;
   font-family: "Poppins Local", Arial, sans-serif;
-  font-size: clamp(2rem, 2.55vw, 3.25rem);
+  font-size: clamp(1.7rem, 1.95vw, 2.55rem);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.035em;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
 }
 
 .projectInformation p {
-  max-width: 43rem;
-  margin: clamp(1.2rem, 1.7vw, 1.8rem) 0 clamp(1.4rem, 2vw, 2rem);
+  max-width: 34rem;
+  margin: clamp(0.95rem, 1.3vw, 1.3rem) 0 clamp(1.1rem, 1.5vw, 1.5rem);
   color: #3f3f3f;
-  font-size: clamp(1rem, 1.1vw, 1.32rem);
+  font-size: clamp(0.9rem, 0.88vw, 1.04rem);
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .projectKnowMore {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   border-bottom: 1px solid currentColor;
-  font-size: clamp(1rem, 1.08vw, 1.25rem);
+  font-size: clamp(0.9rem, 0.86vw, 1rem);
   font-weight: 500;
   line-height: 1.4;
 }
 
 .projectKnowMore span {
-  font-size: 1.4em;
+  font-size: 1.35em;
   line-height: 0.7;
   transition: transform 0.2s ease;
 }
 
 .projectKnowMore:hover span,
 .projectKnowMore:focus-visible span {
-  transform: translateX(0.2rem);
+  transform: translateX(0.18rem);
 }
 
 .projectCoverLink:focus-visible,
@@ -509,71 +474,99 @@ button {
 @media (max-width: 1000px) {
   .designerGallery {
     min-height: auto;
-    padding: clamp(4rem, 9vw, 7rem) 0;
+    padding: clamp(3rem, 7vw, 5rem) 0;
   }
 
   .projectFeature {
-    width: min(47rem, 86vw);
+    width: min(43rem, 84vw);
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.2rem;
   }
 
   .projectCoverLink {
-    width: min(39rem, 100%);
+    width: min(35rem, 100%);
+    max-width: none;
     justify-self: center;
   }
 
   .projectInformation {
-    max-width: 40rem;
-  }
-
-  .designerGallery::after {
-    bottom: 2%;
-    left: 10%;
-    width: 72vw;
-    height: 22vw;
+    width: min(35rem, 100%);
+    max-width: none;
+    justify-self: center;
   }
 }
 
 @media (max-width: 620px) {
+  .topNavigation {
+    gap: 0.8rem;
+  }
+
+  .backButton {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.1rem;
+  }
+
+  .backButton path {
+    stroke-width: 3.1;
+  }
+
   .designerGallery {
-    padding: 3.5rem 0 4.5rem;
-  }
-
-  .designerGallery::before {
-    opacity: 0.7;
-  }
-
-  .designerGallery::after {
-    bottom: 2%;
-    left: 4%;
-    width: 84vw;
-    height: 34vw;
-  }
-
-  .galleryGeometry {
-    top: 1rem;
-    right: -1rem;
-    opacity: 0.38;
+    padding: 2.75rem 0 3.5rem;
   }
 
   .projectFeature {
-    width: 90vw;
-    gap: 2rem;
+    width: min(88vw, 31rem);
+    gap: 1.65rem;
+  }
+
+  .projectCoverLink {
+    width: 100%;
   }
 
   .projectTitleLink h1 {
-    font-size: clamp(1.65rem, 8vw, 2.35rem);
-    letter-spacing: -0.025em;
+    font-size: clamp(1.45rem, 6.6vw, 1.95rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
   }
 
   .projectInformation p {
-    margin: 1rem 0 1.35rem;
-    font-size: 0.96rem;
+    margin: 0.85rem 0 1.1rem;
+    font-size: 0.92rem;
     line-height: 1.65;
   }
 
   .projectKnowMore {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .siteShell {
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+  }
+
+  .topNavigation {
+    gap: 0.62rem;
+  }
+
+  .backButton {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  .textNavigationLink {
+    font-size: 0.77rem;
+  }
+
+  .pillButton {
+    min-width: 5.2rem;
+    padding: 0 0.85rem;
+    font-size: 0.77rem;
+  }
+
+  .projectFeature {
+    width: 91vw;
   }
 }
